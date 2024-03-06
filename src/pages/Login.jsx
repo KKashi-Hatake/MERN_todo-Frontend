@@ -22,7 +22,7 @@ const Login = () => {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}user/isloggedin`,
+          `/user/isloggedin`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Login = () => {
       try {
         if (form === "signup") {
           const res = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}user/register`,
+            `/user/register`,
             val,
             {
               headers: {
@@ -59,7 +59,7 @@ const Login = () => {
         } else {
           const cred = { email: val.email, password: val.password };
           const res = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}user/login`,
+            `/user/login`,
             cred,
             {
               headers: {

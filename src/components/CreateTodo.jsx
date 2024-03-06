@@ -12,7 +12,7 @@ const CreateTodo = () => {
   const handler = async (e) => {
     e.preventDefault();
     await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}todo/create`,
+      `/todo/create`,
       {content:inputText},
       {
         headers: {
@@ -29,11 +29,11 @@ const CreateTodo = () => {
   const logoutHandler = async (e)=>{
     e.preventDefault();
     await axios.get(
-      `${import.meta.env.VITE_BACKEND_URL}user/logout`,
+      `/user/logout`,
       {
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          "Accept": "application/json",
         },
         // credentials: 'include',
         withCredentials: true,

@@ -17,7 +17,7 @@ const Home = () => {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}user/isloggedin`,
+          `/user/isloggedin`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -41,7 +41,7 @@ const Home = () => {
     const getData = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_BACKEND_URL}todo/all`,
+          `/todo/all`,
           {
             headers: {
               "Content-Type": "application/json",

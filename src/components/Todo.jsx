@@ -14,7 +14,7 @@ const Todo = ({ data }) => {
     e.preventDefault();
     try {
       await axios.delete(
-        `${import.meta.env.VITE_BACKEND_URL}todo/delete/${data._id}`,
+        `/todo/delete/${data._id}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const Todo = ({ data }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}todo/update`,
+        `/todo/update`,
         { ...data, isComplete: val, content: text },
         {
           headers: {
@@ -52,7 +52,7 @@ const Todo = ({ data }) => {
     if (edit) {
       try {
         await axios.post(
-          `${import.meta.env.VITE_BACKEND_URL}todo/update`,
+          `/todo/update`,
           { ...data, content: text, isComplete: check },
           {
             headers: {
